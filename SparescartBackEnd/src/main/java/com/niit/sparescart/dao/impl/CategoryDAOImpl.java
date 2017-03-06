@@ -30,9 +30,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		// convert the hibernate query into db specific language
 		//creating variable of list & pass from list
 		
-		List<Category> al=new ArrayList<Category>();  
-	   sessionFactory.getCurrentSession().createQuery("from category").list();
-		return (al);
+	  return  sessionFactory.getCurrentSession().createQuery("from Category").list();
 	}
 
 	public boolean save(Category category) {

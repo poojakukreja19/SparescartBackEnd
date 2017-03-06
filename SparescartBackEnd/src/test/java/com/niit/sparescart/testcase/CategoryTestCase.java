@@ -89,8 +89,7 @@ public class CategoryTestCase {
 	@Test
 	public void getCategoryByNameTestCase()
 	{
-		category=categoryDAO.getCategoryByName("Electronic"
-				+ " Category");
+		category=categoryDAO.getCategoryByName("Electronic Category");
 	   Assert.assertNotNull("getCategoryByName", category);
 	}
 	

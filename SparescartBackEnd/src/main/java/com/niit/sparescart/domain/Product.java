@@ -5,13 +5,14 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
-//@Table(name="category")
 @Entity
 @Component
-public class Category {
+public class Product {
+
 	@Id
 	private String id;
 	private String name;
+	private String price;
 	private String description;
 	
 	public String getId() {
@@ -26,6 +27,12 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -33,6 +40,6 @@ public class Category {
 		this.description = description;
 	}
 	
-	
 
+	
 }

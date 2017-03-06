@@ -15,6 +15,9 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.sparescart.domain.Category;
+import com.niit.sparescart.domain.Product;
+import com.niit.sparescart.domain.Supplier;
+import com.niit.sparescart.domain.User;
 @Configuration
 @ComponentScan("com.niit.sparescart")
 @EnableTransactionManagement
@@ -52,6 +55,9 @@ public class ApplicationContextConfig {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 
