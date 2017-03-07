@@ -38,12 +38,12 @@ public class UserTestCase {
 	@Test
 	 public void createUserTestCase()
 		{
-			user.setId("US05032017");
+			user.setId("US09032017");
 			user.setName("pooja");
             user.setPassword("pooja");	
             user.setMail("pooja@gmail.com");
             user.setContact("9876543210");
-            user.setRole('C');
+            user.setRole("Role_Customer");
 			boolean flag=userDAO.save(user);			
 			Assert.assertEquals("createUserTestCase",true, flag);
         }
@@ -51,12 +51,12 @@ public class UserTestCase {
 	@Test
 	public void updateUserTestCase()
 	{
-		user.setId("US07032017");
+		user.setId("US01032017");
 		user.setName("niit1");
         user.setPassword("niit2");	
         user.setMail("niit@gmail.com");
         user.setContact("9876543210");
-        user.setRole('A');
+        user.setRole("Role_Admin");
 		boolean flag=userDAO.save(user);			
 		Assert.assertEquals("updateUserTestCase",true, flag);
     }
