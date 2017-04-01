@@ -18,14 +18,14 @@ public class ProductDAOImpl implements ProductDAO{
 
 	@Autowired
 	SessionFactory sessionFactory;
-	private ProductDAOImpl(SessionFactory sessionFactory){
+	private ProductDAOImpl(SessionFactory sessionFactory)
+	{
 		this.sessionFactory = sessionFactory;
 	}
 	
 	public List<Product> getallProducts() {
 		List<Product> al=new ArrayList<Product>();  
-		   sessionFactory.getCurrentSession().createQuery("from Product").list();
-			return (al);
+		return   sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 	
 	public boolean save(Product product) {

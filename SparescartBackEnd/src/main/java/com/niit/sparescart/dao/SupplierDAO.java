@@ -17,6 +17,9 @@ public interface SupplierDAO {
 			
 			//get Supplier by id
 		    public Supplier getSupplierByID(String id);
+
+			public boolean deleteById(String id);
+
 			
 			
 

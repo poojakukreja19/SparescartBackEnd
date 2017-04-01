@@ -38,16 +38,15 @@ public class UserTestCase {
 	@Test
 	 public void createUserTestCase()
 		{
-			user.setId("US09032017");
+			user.setId("US01032017");
 			user.setName("pooja");
             user.setPassword("pooja");	
             user.setMail("pooja@gmail.com");
             user.setContact("9876543210");
-            user.setRole("Role_Customer");
+            user.setRole("Role_Admin");
 			boolean flag=userDAO.save(user);			
 			Assert.assertEquals("createUserTestCase",true, flag);
         }
-	
 	@Test
 	public void updateUserTestCase()
 	{
@@ -56,33 +55,10 @@ public class UserTestCase {
         user.setPassword("niit2");	
         user.setMail("niit@gmail.com");
         user.setContact("9876543210");
-        user.setRole("Role_Admin");
-		boolean flag=userDAO.save(user);			
+        user.setRole("Role_Customer");
+		boolean flag=userDAO.update(user);			
 		Assert.assertEquals("updateUserTestCase",true, flag);
     }
 	
-	 @Test
-		public void validateCredentialTestCase()
-		{
-			boolean flag = userDAO.validate("niit","niit");
-			
-			assertEquals("validateCredentialTestCase", true,flag);
-		}
 	 
-	 @Test
-		public void getallUsersTestCase()
-		{
-	        int recordsFromDAO =  userDAO.list().size();
-			assertEquals("getallUsersTestCase", 3, recordsFromDAO);
-		}
-		
-	 
-	 @Test
-		public void getUserByIDTestCase()
-		{
-			user=userDAO.getUserByID("US05032017");
-		   Assert.assertNotNull("getUserByID", user);
-		}
-		
-
 }

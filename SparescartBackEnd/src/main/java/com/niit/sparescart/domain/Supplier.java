@@ -1,7 +1,13 @@
 package com.niit.sparescart.domain;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import org.springframework.stereotype.Component;
 
@@ -11,9 +17,11 @@ public class Supplier {
 	
     @Id
 	private String id;
+    @Min(5)
+    @Max(15)
 	private String name;
 	private String address;
-	private String contact;
+	private String contact;	
 	
 	public String getId() {
 		return id;
@@ -40,7 +48,4 @@ public class Supplier {
 		this.contact = contact;
 	}
 	
-	
-	
-
 }

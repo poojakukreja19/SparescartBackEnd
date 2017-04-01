@@ -1,7 +1,12 @@
 package com.niit.sparescart.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import org.springframework.stereotype.Component;
 
@@ -11,9 +16,14 @@ public class Product {
 
 	@Id
 	private String id;
+	//@Min(5)
+	//@Max(15)
 	private String name;
 	private String price;
 	private String description;
+	//private String category_id;
+	//private String supplier_id;
+	
 	
 	public String getId() {
 		return id;
@@ -40,6 +50,5 @@ public class Product {
 		this.description = description;
 	}
 	
-
-	
+		
 }

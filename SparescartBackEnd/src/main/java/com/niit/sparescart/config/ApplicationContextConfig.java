@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +16,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.sparescart.domain.Category;
+import com.niit.sparescart.domain.Mycart;
 import com.niit.sparescart.domain.Product;
 import com.niit.sparescart.domain.Supplier;
 import com.niit.sparescart.domain.User;
@@ -45,6 +47,7 @@ public class ApplicationContextConfig {
 		
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.hbm2ddl.auto" , "update");
 		return properties;
 	}
 
@@ -58,6 +61,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Mycart.class);
+		//sessionBuilder.scanPackages("com.niit.sparescart.domain");
 		return sessionBuilder.buildSessionFactory();
 	}
 

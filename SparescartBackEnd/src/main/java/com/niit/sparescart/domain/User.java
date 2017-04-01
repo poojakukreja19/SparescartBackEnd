@@ -1,8 +1,13 @@
 package com.niit.sparescart.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Entity // directly access from database
@@ -12,8 +17,12 @@ public class User {
                //particular value is int ,long ,number for auto generated
 	@Id
 	private String id;
+	@NotEmpty(message="Please enter your name")
 	private String name;
+	//@Min(5)
+	//@Max(15)
 	private String password;
+	@Column( unique=true, nullable=false)
 	private String mail;
 	private String contact;
 	private String role;

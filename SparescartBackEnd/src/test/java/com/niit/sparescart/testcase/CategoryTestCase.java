@@ -54,7 +54,7 @@ public class CategoryTestCase {
 		category.setName("shoes Category");
 		category.setDescription("This is shoes");
 		
-		boolean flag=categoryDAO.save(category);
+		boolean flag=categoryDAO.update(category);
 		
 		//COMPARE what you are expecting VS what you are getting from save method
 		

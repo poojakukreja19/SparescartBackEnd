@@ -25,7 +25,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 	
 	public List<Supplier> list() {
-	return sessionFactory.getCurrentSession().createQuery("from Supplier").list();		
+	return sessionFactory.getCurrentSession().createQuery("from Supplier").list();	
 	}
 	
 	public boolean save(Supplier supplier) {
@@ -50,5 +50,18 @@ public class SupplierDAOImpl implements SupplierDAO {
 	public Supplier getSupplierByID(String id) {
     return (Supplier) sessionFactory.getCurrentSession().get(Supplier.class, id);
 	}
+
+	public boolean deleteById(String id) {
+		try {
+			sessionFactory.getCurrentSession().delete(getSupplierByID(id));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace(); 
+			return false;
+		}
+
+	}
+
+
 
 }

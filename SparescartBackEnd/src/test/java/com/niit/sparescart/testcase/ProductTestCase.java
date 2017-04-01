@@ -35,7 +35,7 @@ public class ProductTestCase {
 	@Test
 	public void createProductTestCase()
 	{
-		product.setId("PD06032017");
+		product.setId("PD070032017");
 		product.setName("Mobile");
 		product.setPrice("2345");
 		product.setDescription("This is Mobile");
@@ -46,11 +46,11 @@ public class ProductTestCase {
 	@Test
 	public void updateProductTestCase()
 	{
-		product.setId("PD08032017");
-		product.setName("Electronic");
+		product.setId("PD09032017");
+		product.setName("Mobile1");
 		product.setPrice("2345");
 		product.setDescription("This is Mobile");
-		boolean flag=productDAO.save(product);		
+		boolean flag=productDAO.update(product);		
 		Assert.assertEquals("updateProductTestCase",true, flag);
 		}
 	

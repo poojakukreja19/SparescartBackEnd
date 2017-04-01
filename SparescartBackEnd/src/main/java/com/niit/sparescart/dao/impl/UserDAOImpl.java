@@ -1,6 +1,6 @@
 package com.niit.sparescart.dao.impl;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -23,7 +23,6 @@ public class UserDAOImpl implements UserDAO{
 	{
 		return sessionFactory.getCurrentSession(); //indirectly calling this method
 	}
-	
 	
 	public List<User> list() {
     return sessionFactory.getCurrentSession().createQuery("from User").list();	//user is a domain object not table name	

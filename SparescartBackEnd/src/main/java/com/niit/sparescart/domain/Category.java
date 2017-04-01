@@ -1,8 +1,16 @@
 package com.niit.sparescart.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 //@Table(name="category")
@@ -11,8 +19,12 @@ import org.springframework.stereotype.Component;
 public class Category {
 	@Id
 	private String id;
+	
+	@Size(min = 5, max = 25, message = "{firstNameInvalid}")
 	private String name;
+	@NotEmpty
 	private String description;
+	//private Set<Product> products;
 	
 	public String getId() {
 		return id;
@@ -32,6 +44,7 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	
 	
 
