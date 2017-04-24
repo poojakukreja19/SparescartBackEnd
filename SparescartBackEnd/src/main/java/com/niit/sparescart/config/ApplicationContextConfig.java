@@ -15,8 +15,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.sparescart.domain.Cart;
 import com.niit.sparescart.domain.Category;
-import com.niit.sparescart.domain.Mycart;
+import com.niit.sparescart.domain.OrderDetail;
 import com.niit.sparescart.domain.Product;
 import com.niit.sparescart.domain.Supplier;
 import com.niit.sparescart.domain.User;
@@ -61,7 +62,9 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
-		sessionBuilder.addAnnotatedClass(Mycart.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(OrderDetail.class);
+
 		//sessionBuilder.scanPackages("com.niit.sparescart.domain");
 		return sessionBuilder.buildSessionFactory();
 	}
