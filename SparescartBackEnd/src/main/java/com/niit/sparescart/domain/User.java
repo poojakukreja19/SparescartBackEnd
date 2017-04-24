@@ -2,10 +2,12 @@ package com.niit.sparescart.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,7 @@ public class User {
 	
                //particular value is int ,long ,number for auto generated
 	@Id
+	@NotNull
 	private String id;
 	@NotEmpty(message="Please enter your name")
 	private String name;

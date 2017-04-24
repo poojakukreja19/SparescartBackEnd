@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.sparescart.dao.UserDAO;
+import com.niit.sparescart.domain.Category;
 import com.niit.sparescart.domain.User;
 
 @Transactional
@@ -59,5 +60,7 @@ public class UserDAOImpl implements UserDAO{
 		}
 		return true;
 		}
+
+	
 	}
 

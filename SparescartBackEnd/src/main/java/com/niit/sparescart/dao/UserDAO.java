@@ -2,6 +2,7 @@ package com.niit.sparescart.dao;
 
 import java.util.List;
 
+import com.niit.sparescart.domain.Category;
 import com.niit.sparescart.domain.User;
 
 public interface UserDAO {
@@ -19,6 +20,8 @@ public interface UserDAO {
 		public boolean update(User user);
 		
 		public boolean validate(String id, String password);
+		
+		
 		
 		//delete user by id----its not require
 		//public boolean deleteById(String id);
