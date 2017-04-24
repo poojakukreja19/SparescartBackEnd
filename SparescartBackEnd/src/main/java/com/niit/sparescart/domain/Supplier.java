@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,7 @@ public class Supplier {
 	
     @Id
 	private String id;
-    @Min(5)
-    @Max(15)
+	@Size(min = 5, max = 25, message = "{NameInvalid}")
 	private String name;
 	private String address;
 	private String contact;	

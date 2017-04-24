@@ -35,21 +35,20 @@ public class ProductTestCase {
 	@Test
 	public void createProductTestCase()
 	{
-		product.setId("PD070032017");
-		product.setName("Mobile");
+		product.setId("PD070032078");
+		product.setName("Suction Pipe");
 		product.setPrice("2345");
-		product.setDescription("This is Mobile");
+		product.setDescription("swift old model");
 		boolean flag=productDAO.save(product);		
 		Assert.assertEquals("createProductTestCase",true, flag);
 		}
-	
 	@Test
 	public void updateProductTestCase()
 	{
-		product.setId("PD09032017");
-		product.setName("Mobile1");
+		product.setId("PD09032010");
+		product.setName("SuctionPipe");
 		product.setPrice("2345");
-		product.setDescription("This is Mobile");
+		product.setDescription("For Swift old Model");
 		boolean flag=productDAO.update(product);		
 		Assert.assertEquals("updateProductTestCase",true, flag);
 		}
@@ -94,4 +93,5 @@ public class ProductTestCase {
 	}
 	
 
+	
 }

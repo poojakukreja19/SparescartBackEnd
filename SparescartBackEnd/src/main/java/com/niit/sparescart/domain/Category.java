@@ -20,7 +20,7 @@ public class Category {
 	@Id
 	private String id;
 	
-	@Size(min = 5, max = 25, message = "{firstNameInvalid}")
+	@Size(min = 5, max = 25, message = "{NameInvalid}")
 	private String name;
 	@NotEmpty
 	private String description;

@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -16,8 +17,7 @@ public class Product {
 
 	@Id
 	private String id;
-	//@Min(5)
-	//@Max(15)
+	@Size(min = 5, max = 25, message = "{NameInvalid}")
 	private String name;
 	private String price;
 	private String description;
@@ -34,7 +34,7 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name){
 		this.name = name;
 	}
 	public String getPrice() {

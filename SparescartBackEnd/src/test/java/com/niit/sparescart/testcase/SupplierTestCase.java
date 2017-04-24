@@ -37,14 +37,13 @@ public class SupplierTestCase {
 	@Test
 	 public void createSupplierTestCase()
 	 {
-		supplier.setId("SU01032017");
-		supplier.setName("pvt ltd");
+		supplier.setId("2032017");
+		supplier.setName("pro pvtltd");
 		supplier.setAddress("faridabad");
 		supplier.setContact("0987654321");
 		boolean flag = supplierDAO.save(supplier);
 		Assert.assertEquals("createSupplierTestCase",true, flag);
-	 }
-	
+	 }	
 	@Test
 	 public void updateSupplierTestCase()
 	 {
@@ -52,7 +51,7 @@ public class SupplierTestCase {
 		supplier.setName("company pvt ltd");
 		supplier.setAddress("haryana");
 		supplier.setContact("0987654321");
-		boolean flag = supplierDAO.save(supplier);
+		boolean flag = supplierDAO.update(supplier);
 		Assert.assertEquals("updateSupplierTestCase",true, flag);
 	 }
 	
@@ -66,7 +65,7 @@ public class SupplierTestCase {
 	@Test
 	public void getallSupplierTestCase()
 	{
-        int recordsFromDAO =  supplierDAO.list().size();
+    int recordsFromDAO =  supplierDAO.list().size();
 		assertEquals("getallSupplierTestCase", 8, recordsFromDAO);
 	}
 	
@@ -74,8 +73,8 @@ public class SupplierTestCase {
 	public void deleteByIdTestCase()
 	{
 		boolean flag=supplierDAO.deleteById("SU05032017");
-        Assert.assertEquals("delete",true, flag);
+    Assert.assertEquals("delete",true, flag);
 	}
-
+	
 
 }
